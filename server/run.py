@@ -22,12 +22,16 @@ def index():
         content = markdown_file.read()
         return markdown.markdown(content)
 
+class Authenticator(Resource):
+
 class UserList(Resource):
     def get(self):
         entries, columns = get_table('user')
 
         return {'message': 'Success', 'data': {'columns':columns, 'entries':entries}}, 200
 
+
+api.add_resource(Authenticator, '/auth')
 
 api.add_resource(UserList, '/users')
 
