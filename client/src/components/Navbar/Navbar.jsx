@@ -26,10 +26,16 @@ function Navbar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Fé y Alegría
           </Typography>
+
           {!isLogged && (
-            <Button color="inherit" href="/login">
-              Login
+            <Button color="inherit" href="../../pages/login">
+              Iniciar Sesión
             </Button>
+          )}
+          {!isLogged && (
+          <Button color="inherit" href="../../pages/SignUp">
+            Registrarse
+          </Button>
           )}
         </Toolbar>
       </AppBar>
