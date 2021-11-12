@@ -24,7 +24,7 @@ function Navbar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Fé y Alegría
+            Fe y Alegría
           </Typography>
 
           {!isLogged && (
@@ -33,9 +33,9 @@ function Navbar() {
             </Button>
           )}
           {!isLogged && (
-          <Button color="inherit" href="../SignUp">
-            Registrarse
-          </Button>
+            <Button color="inherit" href="../SignUp">
+              Registrarse
+            </Button>
           )}
         </Toolbar>
       </AppBar>

@@ -46,10 +46,7 @@ function Landing() {
 
       <Helmet title="Inicio" />
       
-      {/* <ThemeProvider theme ={theme}>
-        <LoginBtn/>
-        <SignUpBtn/>
-      </ThemeProvider> */}
+ 
 
       <main id="hero">
         <div class="container col-xxl-8 px-4 py-5">

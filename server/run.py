@@ -86,11 +86,18 @@ class User(Resource):
 
         return {'message': 'User not found', 'data': {}}, 404
 
+class Degree(Resource):
+    def get(self):
+        entries, _ = get_table('degree')
+        return {'message': 'Titulos obtenidos exitosamente', 'data': entries}, 201
+
 api.add_resource(Authenticator, '/auth')
 
 api.add_resource(Users, '/users')
 
 api.add_resource(User, '/user/<string:identifier>')
+
+api.add_resource(Degree, '/degree')
 
 #api.add_resource(JobOffers, '/joboffer/<string:identifier>')
 
