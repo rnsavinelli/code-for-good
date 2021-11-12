@@ -18,4 +18,7 @@ def index():
         content = markdown_file.read()
         return markdown.markdown(content)
 
+with open("DATABASE.md","r") as file:
+     dbfile = "\"" + file.read().strip() + "\""
+
 app.run(host='0.0.0.0', port=5000, debug=True)
