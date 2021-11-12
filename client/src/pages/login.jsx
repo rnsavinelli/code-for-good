@@ -8,6 +8,7 @@ function Login () {
              <Helmet title="Ingresar" />
              <Container>
               <div className="mx-auto mt-5">
+                  
                 <h3> Ingresa acá! </h3>
                 <label for="email"><i class="fas fa-user "></i> Email:</label><br />
                 <input type="text" name="email" id="email" placeholder="juan@ejemplo.com"/><br/>
