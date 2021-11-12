@@ -15,7 +15,7 @@ function Login () {
                 <input type="password" name="password" id="password" placeholder=""/><br/>
          
                 <input type="submit" value="Ingresa" />
-                <label for="">Ingresar</label>
+                <label for=""></label><br />
                 <input type="checkbox" name="recordarme" />
                 <label for="">Recordarme</label>
             </div>
