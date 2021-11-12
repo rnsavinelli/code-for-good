@@ -60,7 +60,7 @@ function Landing() {
                         loading="lazy"></img>
                 </div>
                 <div class="col-lg-6">
-                    <h1 class="display-5 fw-bold lh-1 mb-3">Fe y alegria.</h1>
+                    <h1 class="display-5 fw-bold lh-1 mb-3">Fe y Alegría.</h1>
                     <p class="lead">Somos una ONG 
                     </p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
