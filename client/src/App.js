@@ -2,11 +2,11 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Landing from "./pages/Landing";
-import Login from "./pages/login";
+import Login from "./pages/session/Login";
 import Card from "./pages/Card";
 import Navbar from "./components/Navbar/Navbar";
 import Test from "./pages/Test";
-import SignUp from "./pages/SignUp";
+import SignUp from "./pages/session/SignUp";
 
 function App() {
   return (

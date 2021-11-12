@@ -32,11 +32,6 @@ function Navbar() {
               Iniciar Sesión
             </Button>
           )}
-          {!isLogged && (
-            <Button color="inherit" href="../SignUp">
-              Registrarse
-            </Button>
-          )}
         </Toolbar>
       </AppBar>
     </Box>
