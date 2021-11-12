@@ -94,10 +94,22 @@ class User(Resource):
 
         return {'message': 'User not found', 'data': {}}, 404
 
+class Degree(Resource):
+    def get(self):
+        entries, _ = get_table('degree')
+        return {'message': 'Titulos obtenidos exitosamente', 'data': entries}, 201
+
 api.add_resource(Authenticator, '/auth')
 
 api.add_resource(Users, '/users')
 
 api.add_resource(User, '/user/<string:identifier>')
 
+<<<<<<< HEAD
+=======
+api.add_resource(Degree, '/degree')
+
+#api.add_resource(JobOffers, '/joboffer/<string:identifier>')
+
+>>>>>>> 276c8906703695f5e538176dda19f53a9ef55ea5
 app.run(host='0.0.0.0', port=5000, debug=True)

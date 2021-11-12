@@ -8,7 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 
 function Navbar() {
-  const [isLogged, setIsLogged] = useState(true);
+  const [isLogged, setIsLogged] = useState(false);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -24,18 +24,13 @@ function Navbar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Fé y Alegría
+            Fe y Alegría
           </Typography>
 
           {!isLogged && (
-            <Button color="inherit" href="../../pages/login">
+            <Button color="inherit" href="../login">
               Iniciar Sesión
             </Button>
-          )}
-          {!isLogged && (
-          <Button color="inherit" href="../../pages/SignUp">
-            Registrarse
-          </Button>
           )}
         </Toolbar>
       </AppBar>
