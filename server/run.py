@@ -23,9 +23,9 @@ def index():
 
 class UserList(Resource):
     def get(self):
-        table = get_table('user')
+        table, columns = get_table('user')
 
-        return {'message': 'Success', 'data': table}, 200
+        return {'message': 'Success', 'columns': columns, 'data': table}, 200
 
 
 api.add_resource(UserList, '/users')
