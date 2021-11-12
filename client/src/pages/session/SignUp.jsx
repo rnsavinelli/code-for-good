@@ -14,36 +14,39 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import Request from "../../api/Request";
 
 const theme = createTheme();
 
 export default function SignUp() {
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
+
+    Request.signUp({
+      name: data.get("name"),
+      username: data.get("email"),
+      surname: data.get("surname"),
       email: data.get("email"),
       password: data.get("password"),
-    });
+      location: data.get("location"),
+      tel_number: data.get("tel_number"),
+      age: data.get("age"),
+      general_description: "",
+      experience: "",
+      degree_id: 1,
+      graduated: 1,
+    })
+      .then((response) => {
+        debugger;
+        console.log(response);
+        navigate("/login");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
@@ -90,11 +93,11 @@ export default function SignUp() {
               </Grid>
               <Grid item xs={12} sm={6}>
                 <TextField
-                  autoComplete="given-name"
-                  name="tel"
+                  autoComplete="phone"
+                  name="tel_number"
                   required
                   fullWidth
-                  id="tel"
+                  id="tel_number"
                   label="Teléfono"
                   autoFocus
                 />
@@ -113,6 +116,17 @@ export default function SignUp() {
                 <TextField
                   required
                   fullWidth
+                  name="age"
+                  label="Edad"
+                  type="number"
+                  id="age"
+                  autoComplete="age"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
                   id="email"
                   label="Email"
                   name="email"
@@ -125,7 +139,7 @@ export default function SignUp() {
                   required
                   fullWidth
                   name="password"
-                  label="Password"
+                  label="Contraseña"
                   type="password"
                   id="password"
                   autoComplete="new-password"
@@ -136,7 +150,7 @@ export default function SignUp() {
                   control={
                     <Checkbox value="allowExtraEmails" color="primary" />
                   }
-                  label="I want to receive inspiration, marketing promotions and updates via email."
+                  label="Terminé el secundario"
                 />
               </Grid>
             </Grid>
@@ -146,18 +160,17 @@ export default function SignUp() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign Up
+              Registrarse
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
-                  Already have an account? Sign in
+                <Link href="/login" variant="body2">
+                  Ya poseo una cuenta! Iniciar Sesión
                 </Link>
               </Grid>
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 5 }} />
       </Container>
     </ThemeProvider>
   );
