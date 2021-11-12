@@ -7,6 +7,7 @@ function Card() {
       <>
         <Helmet title="Mi perfil" />
         <Container>
+      
         <div className="mx-auto mt-5">
         <div>
             <h3>Mi Perfil</h3>
@@ -22,6 +23,7 @@ function Card() {
 
         </div>
         </div>
+    
       </Container>
       </>
     );
