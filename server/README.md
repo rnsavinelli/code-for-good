@@ -13,7 +13,7 @@ All responses will have the form:
 
 Subsequent response definitions will only detail the expected value of the `data field`.
 
-### List all users
+## List all users
 
 **Definition**
 
@@ -26,14 +26,14 @@ Subsequent response definitions will only detail the expected value of the `data
 ```json
 [
     {
-        "id": "000000000000"
+        "id": "000000000000",
         "username": "rnsavinelli",
         "name": "Roberto Nicolas",
         "surname": "Savinelli"
         ...
     },
     {
-        "id": "000000000001"
+        "id": "000000000001",
         "username": "gcastro",
         "name": "Gonzalo",
         "surname": "Castro"
@@ -42,7 +42,26 @@ Subsequent response definitions will only detail the expected value of the `data
 ]
 ```
 
-### Registering a new job offer
+## Lookup user details
+
+`GET /user/<userid>`
+
+**Response**
+
+- `404 Not Found` if the user does not exist.
+- `200 OK` on success.
+
+```json
+{
+    "id": "000000000000",
+    "username": "rnsavinelli",
+    "name": "Roberto Nicolas",
+    "surname": "Savinelli"
+    ...
+},
+```
+
+## Registering a new job offer
 
 **Definition**
 
@@ -73,26 +92,7 @@ Subsequent response definitions will only detail the expected value of the `data
 }
 ```
 
-## Lookup device details
-
-`GET /user/<userid>`
-
-**Response**
-
-- `404 Not Found` if the user does not exist.
-- `200 OK` on success.
-
-```json
-{
-    "id": "000000000000"
-    "username": "rnsavinelli",
-    "name": "Roberto Nicolas",
-    "surname": "Savinelli"
-    ...
-},
-```
-
-## Delete a device
+## Delete a job offer
 
 **Definition**
 

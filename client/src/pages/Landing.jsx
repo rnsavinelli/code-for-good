@@ -6,7 +6,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 // import { withStyles } from '@mui/styles/withStyles';
 import LoginBtn from '../components/LoginBtn.js';
 import SignUpBtn from '../components/SignUpBtn.js';
-import bg from "../assets/bg.png";
+// import bg from "../assets/bg.png";
 
 const theme = createTheme({
   palette: {
@@ -55,28 +55,7 @@ function Landing() {
         
       </style>
 
-        <a class="navbar-brand" href="#">App Name</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Demo</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
-    
-        </div>
+
     </div>
   )
 }
