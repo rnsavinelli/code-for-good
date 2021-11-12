@@ -4,6 +4,7 @@ import "./App.css";
 import Landing from "./pages/Landing";
 import Navbar from "./components/Navbar/Navbar";
 import Test from "./pages/Test";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/test" element={<Test />} />
+        <Route path="/SignUp" element={<SignUp />} />
       </Routes>
     </Router>
   );
