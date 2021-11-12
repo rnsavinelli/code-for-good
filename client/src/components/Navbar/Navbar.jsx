@@ -8,7 +8,7 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 
 function Navbar() {
-  const [isLogged, setIsLogged] = useState(true);
+  const [isLogged, setIsLogged] = useState(false);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -28,14 +28,20 @@ function Navbar() {
           </Typography>
 
           {!isLogged && (
-            <Button color="inherit" href="../../pages/login">
+            <Button color="inherit" href="../login">
               Iniciar Sesión
             </Button>
           )}
           {!isLogged && (
+<<<<<<< HEAD
             <Button color="inherit" href="../../pages/SignUp">
               Registrarse
             </Button>
+=======
+          <Button color="inherit" href="../SignUp">
+            Registrarse
+          </Button>
+>>>>>>> 461f5569242eb01d5a26e42a6c267edb42f09f92
           )}
         </Toolbar>
       </AppBar>

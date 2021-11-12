@@ -60,9 +60,8 @@ function Landing() {
                         loading="lazy"></img>
                 </div>
                 <div class="col-lg-6">
-                    <h1 class="display-5 fw-bold lh-1 mb-3">Ship great software with our bug tracker</h1>
-                    <p class="lead">A simple, fast and scalable bug tracking system that helps you manage bugs easily
-                        and deliver great products on time.
+                    <h1 class="display-5 fw-bold lh-1 mb-3">Fe y alegria.</h1>
+                    <p class="lead">Somos una ONG 
                     </p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
                         <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Demo</button>
