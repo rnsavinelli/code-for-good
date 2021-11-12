@@ -29,6 +29,7 @@ export default function Login() {
     })
       .then((r) => {
         navigate("/");
+        localStorage.setItem("session", "true");
       })
       .catch((e) => console.error(e));
   };

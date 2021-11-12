@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import UseSession from "../../api/UseSession";
 
 function Navbar() {
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(UseSession());
+
+  useEffect(() => {
+    setIsLogged(UseSession());
+  }, [isLogged]);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -21,15 +26,24 @@ function Navbar() {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+            <FavoriteBorderIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Fe y Alegría
           </Typography>
 
-          {!isLogged && (
+          {!isLogged ? (
             <Button color="inherit" href="../login">
               Iniciar Sesión
+            </Button>
+          ) : (
+            <Button
+              onClick={() => {
+                setIsLogged(false);
+                localStorage.setItem("session", "false");
+              }}
+            >
+              Cerrar Sesión
             </Button>
           )}
         </Toolbar>
