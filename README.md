@@ -1,4 +1,4 @@
-# team-3
+# Code For Good
 
 CHALLENGE STATEMENT:
 
