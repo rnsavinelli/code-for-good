@@ -2,26 +2,25 @@ import sqlite3
 import traceback
 from sqlite3 import Error
 
-def dbload(db, table):
+def get_table(table):
     conn, data = None, None
+
+    with open("DATABASE.md","r") as file:
+        db = file.read().strip()
+
     try:
         conn = sqlite3.connect(db)
         c = conn.cursor()
         c.execute(f'SELECT * FROM {table}')
-        data = c.fetchone()
+        data = c.fetchall()
         conn.commit()
-    except Error as e:
+
+    except Error as errpr:
         traceback.print_exc()
-        print(e)
+        print(error)
+
     finally:
         if conn:
             conn.close()
 
-    config = {}
-    if table == conf_table:
-        config = {
-            'IMAGES_DIRECTORY': data[0],
-            'INFORMATION_DIRECTORY': data[1]
-        }
-
-    return config
+    return data
