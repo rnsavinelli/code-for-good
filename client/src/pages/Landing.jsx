@@ -1,5 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
+import Fe from '../assets/imagennav.png';
 // import { makeStyles } from '@mui/styles/makeStyles'
 // import { createTheme, ThemeProvider } from '@mui/material/styles';
 // import { CssBaseline } from "@mui/material";
@@ -52,8 +53,8 @@ function Landing() {
         <div class="container col-xxl-8 px-4 py-5">
             <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
                 <div class="col-10 col-sm-8 col-lg-6">
-                    <img src="https://www.dropbox.com/s/25lk5ur2qvxms7o/AppLandingPage.png?raw=1"
-                        class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500"
+                    <img src={Fe}
+                        class="d-block mx-lg-auto img-fluid" alt="fe y alegria" width="700" height="500"
                         loading="lazy"></img>
                 </div>
                 <div class="col-lg-6">
