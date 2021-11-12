@@ -33,7 +33,7 @@ function Navbar() {
             </Button>
           )}
           {!isLogged && (
-            <Button color="inherit" href="../../pages/SignUp">
+            <Button color="inherit" href="../SignUp">
               Registrarse
             </Button>
           )}
