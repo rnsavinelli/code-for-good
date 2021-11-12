@@ -33,15 +33,9 @@ function Navbar() {
             </Button>
           )}
           {!isLogged && (
-<<<<<<< HEAD
             <Button color="inherit" href="../../pages/SignUp">
               Registrarse
             </Button>
-=======
-          <Button color="inherit" href="../SignUp">
-            Registrarse
-          </Button>
->>>>>>> 461f5569242eb01d5a26e42a6c267edb42f09f92
           )}
         </Toolbar>
       </AppBar>
