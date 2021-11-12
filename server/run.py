@@ -88,8 +88,8 @@ class User(Resource):
         for entry in entries:
             if str(identifier) == str(entry[0]):
                 tags, _ = get_user_tags(entry[0])
-                tag_names, tag_columns = get_tag_names(list(map(lambda x: x[1] ,tags)))                
-                
+                tag_names, tag_columns = get_tag_names(list(map(lambda x: x[1] ,tags)))
+
                 return {'message': 'User found', 'data': {'columns':columns, 'entry':entry, 'tags': {'columns': tag_columns, 'entries': tag_names}}}, 200
 
         return {'message': 'User not found', 'data': {}}, 404
@@ -105,11 +105,6 @@ api.add_resource(Users, '/users')
 
 api.add_resource(User, '/user/<string:identifier>')
 
-<<<<<<< HEAD
-=======
 api.add_resource(Degree, '/degree')
 
-#api.add_resource(JobOffers, '/joboffer/<string:identifier>')
-
->>>>>>> 276c8906703695f5e538176dda19f53a9ef55ea5
 app.run(host='0.0.0.0', port=5000, debug=True)
