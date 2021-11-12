@@ -47,18 +47,18 @@ def write_table(table, dic):
         db = file.read().strip()
 
     is_first = True
-
-    values = str()
+    values, columns = str(), str()
     for key in dic.keys():
         if is_first:
+            columns = columns + "\"" + key + "\""
             values = values + "\"" + dic[key] + "\""
             is_first = False
         else:
+            columns = columns + ",\"" + key + "\""
             values = values + ",\"" + dic[key] + "\""
 
-    print(values)
     try:
-        db_exec(db, f'INSERT INTO {conf_table} VALUES ({values})')
+        db_exec(db, f'INSERT INTO {table} ({columns}) VALUES ({values})')
         pass
     except Error as e:
         traceback.print_exc()
