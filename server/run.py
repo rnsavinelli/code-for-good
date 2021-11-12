@@ -8,6 +8,7 @@ from flask import Flask, g
 from flask_restful import Resource, Api, reqparse
 import markdown
 import urllib
+import json
 
 # Create an instance of Flask
 app = Flask(__name__)
@@ -23,9 +24,9 @@ def index():
 
 class UserList(Resource):
     def get(self):
-        table, columns = get_table('user')
+        entries, columns = get_table('user')
 
-        return {'message': 'Success', 'columns': columns, 'data': table}, 200
+        return {'message': 'Success', 'data': {'columns':columns, 'entries':entries}}, 200
 
 
 api.add_resource(UserList, '/users')
