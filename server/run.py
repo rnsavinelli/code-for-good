@@ -1,7 +1,7 @@
 import os
 
 # Import database primitives
-from database import get_table, write_table
+from database import get_table, write_table, get_user_by_credentials
 
 # Import the framework
 from flask import Flask, g
@@ -25,7 +25,31 @@ def index():
         return markdown.markdown(content)
 
 class Authenticator(Resource):
-    pass
+    def get(self):
+        pass
+
+    def post(self):
+        parser = reqparse.RequestParser()
+
+        parser.add_argument("username", required=True)
+        parser.add_argument("password", required=True)
+
+        # Parse the arguments into an object
+        args = parser.parse_args()
+
+        print(args)
+
+        data, columns = get_user_by_credentials('credential', args['username'], args['password'])
+
+        if data != None:
+            return {'message': 'Success', 'data': {'columns':columns, 'entry': data}}, 200
+        else:
+            return {'message': 'User not found', 'data': {}}, 404
+
+
+        
+            
+
 
 class Users(Resource):
     def get(self):
