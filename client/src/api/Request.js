@@ -4,6 +4,7 @@ const URLs = {
   BASEURL: `http://localhost:5000/`,
   LOGIN: `/auth`,
   USERS: "/users",
+  DEGREES: "/degrees",
 };
 
 const Api = axios.create({
@@ -17,11 +18,13 @@ const Request = {
   readSingle: (sPath) => {
     return Api.get(sPath);
   },
-  signIn: () => {
-    return Api.post(URLs["LOGIN"], {
-      user: "admin",
-      password: "admin",
-    });
+
+  logIn: (data) => {
+    return Api.post(URLs["LOGIN"], data);
+  },
+
+  signUp: (data) => {
+    return Api.post(URLs["USERS"], data);
   },
 
   getUsers: () => {
