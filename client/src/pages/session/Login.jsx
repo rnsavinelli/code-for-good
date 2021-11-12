@@ -13,18 +13,24 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { Helmet } from "react-helmet";
+import { useNavigate } from "react-router-dom";
+import Request from "../../api/Request";
 
 const theme = createTheme();
 
 export default function Login() {
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    console.log({
-      email: data.get("email"),
+    Request.logIn({
+      username: data.get("email"),
       password: data.get("password"),
-    });
+    })
+      .then((r) => {
+        navigate("/");
+      })
+      .catch((e) => console.error(e));
   };
 
   return (
