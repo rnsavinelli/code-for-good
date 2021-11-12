@@ -27,14 +27,12 @@ Subsequent response definitions will only detail the expected value of the `data
 [
     {
         "id": "000000000000",
-        "username": "rnsavinelli",
         "name": "Roberto Nicolas",
         "surname": "Savinelli"
         ...
     },
     {
         "id": "000000000001",
-        "username": "gcastro",
         "name": "Gonzalo",
         "surname": "Castro"
         ...
@@ -82,7 +80,7 @@ Subsequent response definitions will only detail the expected value of the `data
 
 ```json
 {
-    "offerid": "000000000000",
+    "id": "000000000000",
     "title": "Software Engineer",
     "company": "J. P. Morgan",
     "description": "",
