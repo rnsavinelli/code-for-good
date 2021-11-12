@@ -23,6 +23,7 @@ def index():
         return markdown.markdown(content)
 
 class Authenticator(Resource):
+    pass 
 
 class UserList(Resource):
     def get(self):
