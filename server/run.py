@@ -38,9 +38,8 @@ class Users(Resource):
 
         _, columns = get_table('user')
 
+        columns.remove("id")
         for col in columns:
-            if str(col) == "id":
-                continue
             parser.add_argument(str(col), required=True)
 
         # Parse the arguments into an object
