@@ -46,10 +46,7 @@ function Landing() {
 
       <Helmet title="Inicio" />
       
-      {/* <ThemeProvider theme ={theme}>
-        <LoginBtn/>
-        <SignUpBtn/>
-      </ThemeProvider> */}
+ 
 
       <main id="hero">
         <div class="container col-xxl-8 px-4 py-5">
@@ -60,12 +57,12 @@ function Landing() {
                         loading="lazy"></img>
                 </div>
                 <div class="col-lg-6">
-                    <h1 class="display-5 fw-bold lh-1 mb-3">Fe y Alegría.</h1>
-                    <p class="lead">Somos una ONG 
+                    <h1 class="display-5 fw-bold lh-1 mb-3">Fe y alegria.</h1>
+                    <p class="lead">Somos un Movimiento Internacional de Educación Popular y Promoción Social que impulsa desde, con y para las comunidades en las que trabaja, procesos educativos integrales, inclusivos y de calidad, comprometiéndose en la transformación de las personas para construir sistemas sociales justos y democráticos.
                     </p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Demo</button>
-                        <button type="button" class="btn btn-outline-primary btn-lg px-4">About</button>
+                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Registrate</button>
+                        <button type="button" class="btn btn-outline-primary btn-lg px-4">Sobre nosotros</button>
                     </div>
                 </div>
             </div>
