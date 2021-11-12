@@ -45,12 +45,27 @@ class Users(Resource):
         # Parse the arguments into an object
         args = parser.parse_args()
 
-        write_table('user', args)
+        if write_table('user', args) == 0:
+            return {'message': 'User registered', 'data': args}, 201
+        else:
+            return {'message': 'Failed to register user', 'data': {}}, 500
 
-        return {'message': 'User registered', 'data': args}, 201
+class User(Resource):
+    def get(self, identifier):
+        entries, columns = get_table('user')
+
+        for entry in entries:
+            if str(identifier) == str(entry[0]):
+                return {'message': 'User found', 'data': {'columns':columns, 'entry':entry}}, 200
+
+        return {'message': 'User not found', 'data': {}}, 404
+
+
 
 api.add_resource(Authenticator, '/auth')
 
 api.add_resource(Users, '/users')
+
+api.add_resource(User, '/user/<string:identifier>')
 
 app.run(host='0.0.0.0', port=5000, debug=True)

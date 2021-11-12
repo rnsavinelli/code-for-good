@@ -59,7 +59,9 @@ def write_table(table, dic):
 
     try:
         db_exec(db, f'INSERT INTO {table} ({columns}) VALUES ({values})')
-        pass
+        return 0
+
     except Error as e:
         traceback.print_exc()
         print(e)
+        return -1
