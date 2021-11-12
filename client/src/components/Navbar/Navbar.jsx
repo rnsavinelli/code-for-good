@@ -24,7 +24,7 @@ function Navbar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Fe y Alegría
+          Fe y Alegría
           </Typography>
 
           {!isLogged && (
