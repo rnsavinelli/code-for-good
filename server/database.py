@@ -10,6 +10,9 @@ def db_exec(db, query):
         c = conn.cursor()
         c.execute(query)
         conn.commit()
+    except Exception as error:
+        traceback.print_exc()
+        print(error)        
     except Error as e:
         traceback.print_exc()
         print(e)
@@ -30,6 +33,10 @@ def get_table(table):
         data = c.fetchall()
         columns = list(map(lambda x: x[0], c.description))
         conn.commit()
+
+    except Exception as error:
+        traceback.print_exc()
+        print(error)
 
     except Error as error:
         traceback.print_exc()
@@ -54,6 +61,10 @@ def get_user_tags(tid):
         data = c.fetchall()
         columns = list(map(lambda x: x[0], c.description))
         conn.commit()
+
+    except Exception as error:
+        traceback.print_exc()
+        print(error)
 
     except Error as error:
         traceback.print_exc()
@@ -90,6 +101,10 @@ def get_tag_names(tag_ids):
         columns = list(map(lambda x: x[0], c.description))
         conn.commit()
 
+    except Exception as error:
+        traceback.print_exc()
+        print(error)
+
     except Error as error:
         traceback.print_exc()
         print(error)
@@ -118,6 +133,12 @@ def get_user_by_credentials(table, username, password):
             conn.commit()
         else: 
             return None, None
+
+    except Exception as error:
+        print('error xd')
+        traceback.print_exc()
+        print(error)
+        return None, None
 
     except Error as error:
         print('error xd')
@@ -170,4 +191,9 @@ def write_table(table, dic):
     except Error as e:
         traceback.print_exc()
         print(e)
-        return -1
+
+    except Exception as e:
+        traceback.print_exc()
+        print(e)        
+    
+    return -1
