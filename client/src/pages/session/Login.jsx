@@ -28,7 +28,7 @@ export default function Login() {
       password: data.get("password"),
     })
       .then((r) => {
-        navigate("/");
+        navigate(`/profile/${r.data.data.entry[0]}`);
         localStorage.setItem("session", "true");
       })
       .catch((e) => console.error(e));

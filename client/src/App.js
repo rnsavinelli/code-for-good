@@ -5,8 +5,8 @@ import Landing from "./pages/Landing";
 import Login from "./pages/session/Login";
 import Card from "./pages/Card";
 import Navbar from "./components/Navbar/Navbar";
-import Test from "./pages/Test";
 import SignUp from "./pages/session/SignUp";
+import Profile from "./pages/session/Profile";
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
         <Route path="/Card" element={<Card />} />
-        <Route path="/test" element={<Test />} />
-        <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/profile/:id" element={<Profile />} />
+        <Route path="/signup" element={<SignUp />} />
       </Routes>
     </Router>
   );
