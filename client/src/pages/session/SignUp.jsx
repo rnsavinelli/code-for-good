@@ -99,7 +99,6 @@ export default function SignUp() {
                   fullWidth
                   id="tel_number"
                   label="Teléfono"
-                  autoFocus
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
